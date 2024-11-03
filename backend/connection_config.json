@@ -1,0 +1,8 @@
+{
+  "MYSQL_HOST": "127.0.0.1",
+  "MYSQL_USER": "root",
+  "MYSQL_PASSWORD": "databaseaccess",
+  "MYSQL_DB": "university_timetable",
+  "MYSQL_CURSORCLASS": "DictCursor",
+  "raise_on_warnings": true
+}

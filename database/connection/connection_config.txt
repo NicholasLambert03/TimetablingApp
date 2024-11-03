@@ -1,7 +1,0 @@
-{
-  "user": "root",
-  "password": "databaseaccess",
-  "host": "127.0.0.1",
-  "database": "university_timetable",
-  "raise_on_warnings": true
-}

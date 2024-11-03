@@ -5,8 +5,8 @@ import json
 import os
 
 class Connector:
+    '''Object to connect to database using connection_config.txt '''
     def __init__(self):
-        
         # Set up logger
         self.logger = logging.getLogger(__name__)
         self.logger.setLevel(logging.INFO)
@@ -25,7 +25,12 @@ class Connector:
         #Set up config filepath
         self.config_file_path = 'database\connection\connection_config.txt'
     def connect_to_database(self):
+        '''Connect the connector to a database'''
         def establish_connection(self,attempts=3, delay=2):
+            ''' Establish the connection between database and connector
+                Params:
+                attempts (int): How mant attempts to connect
+                delay (int): Time between attempts in seconds'''
             print("Beggining Connection")
             attempt = 1
             # Implement a reconnection routine5
@@ -54,9 +59,11 @@ class Connector:
         else:
             print('Connection Failed')  
     def disconnect_from_database(self,):
+        ''' close connection to database'''
         self.cursor.close
         self.connection.close()
     def get_config(self,):
+        ''' gets config from connection_config.txt'''
         print("Getting config")
         with open(self.config_file_path) as f:
             data = f.read()

@@ -25,3 +25,5 @@ echo Starting React app...
 cd /d "%~dp0frontend"
 start "ReactApp" cmd /k "npm run dev" 
 
+pause
+

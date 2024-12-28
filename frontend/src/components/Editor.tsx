@@ -1,34 +1,26 @@
 import { useState, useEffect } from "react"
+const apiUrl = import.meta.env.VITE_API_URL
 
 interface Data{
-    field:string;
+    tables:[];
 }
 
 function Editor() {
     const [data, setData] = useState<Data>({
-        field:'',
+        tables:[],
     })
 
     useEffect(() =>{
-        fetch("/data")
-            .then((res)=>{
-                if (!res.ok){
-                    throw new Error('Network response was not ok');
-                }
-                return res.json();
-            })
-            .then((data:Data) => {
-                setData(data);
-            })
-            .catch((error) =>{
-                console.error('there was a problem with the fetch opperation:',error);
-            })
+        fetch(`${apiUrl}/data`)
+            .then((res)=>{return res.json();})
+            .then((data:Data) => {setData(data);})
     },[])
 
     return(
-       <h1>
-        {data.field}
-        </h1>
+        
+       <h2>
+        {data.tables}
+        </h2>
     )
 }
 

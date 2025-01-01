@@ -10,7 +10,8 @@ if %errorLevel% neq 0 (
 
 REM Start MySQL Server5
 echo Starting MySQL Server...
-net start MySQL
+:: Change process name here
+net start MySQL80 
 
 REM Start Flask API
 echo Starting Flask API...
